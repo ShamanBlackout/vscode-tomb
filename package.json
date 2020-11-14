@@ -21,7 +21,15 @@
         "grammars": [{
             "language": "tomb",
             "scopeName": "source.tomb",
-            "path": "./syntaxes/tomb.tmLanguage"
+            "path": "./syntaxes/tomb.tmLanguage.json"
         }]
+    },
+    "scripts": {
+        "prepare": "js-yaml syntaxes/tomb.tmLanguage.yaml > syntaxes/tomb.tmLanguage.json",
+        "package": "npm run prepare && vsce package",
+        "clean": "rm -f syntaxes/tomb.tmLanguage.json"
+    },
+    "devDependencies": {
+        "js-yaml": "^3.13.1"
     }
 }
