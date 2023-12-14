@@ -15,9 +15,7 @@ Syntax highlighting for the TOMB smart contract language.
  2. Create Folder (name it what you want, mines is called vscode-tomb)
  3. Download the zip file and extract its contents into the newly created folder or clone the repo into the newly created folder.
  4. Go into the newly created folder.
- 5. Make sure you have js-yaml  and vsce installed.
-       - npm install -g @vscode/vsce (-g if you want to install globally)
-       - npm install js-yaml
+ 5. Run command "npm install" 
  6. Once the above installed, type 'npm run package'.
  7. You should now have a '.vsix' file labeled tomb-0.0.2 (versions may be different as updates happen)
  8. You can install the .vsix file by doing 1 of the following:
