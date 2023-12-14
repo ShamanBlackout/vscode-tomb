@@ -35,10 +35,8 @@
     ]
   },
   "scripts": {
-    "prepare": "js-yaml syntaxes/tomb.tmLanguage.yaml > syntaxes/tomb.tmLanguage.json",
-    "package": "npm run prepare && vsce package",
-    "publish": "npm run package && vsce publish",
-    "clean": "rm -f syntaxes/tomb.tmLanguage.json"
+    "package": "vsce package",
+    "publish": "vsce package && vsce publish"
   },
   "devDependencies": {
     "js-yaml": "^3.13.1"
