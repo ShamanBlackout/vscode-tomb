@@ -2,7 +2,7 @@
   "name": "tomb",
   "displayName": "TOMB",
   "description": "Phantasma TOMB smart contract language",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "PhantasmaChain",
   "repository": "https://github.com/phantasma-io/vscode-tomb",
   "engines": {
