@@ -1,35 +1,46 @@
 {
-    "name": "tomb",
-    "displayName": "vscode-tomb",
-    "description": "Phantasma TOMB smart contract language",
-    "version": "0.0.2",
-    "publisher": "phantasmaio",
-    "repository": "https://github.com/phantasma-io/vscode-tomb",
-    "engines": {
-        "vscode": "^1.51.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "tomb",
+  "displayName": "TOMB",
+  "description": "Phantasma TOMB smart contract language",
+  "version": "0.0.4",
+  "publisher": "PhantasmaChain",
+  "repository": "https://github.com/phantasma-io/vscode-tomb",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tomb",
+        "aliases": [
+          "TOMB",
+          "tomb"
+        ],
+        "extensions": [
+          ".tomb",
+          ".tmb"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "tomb",
-            "aliases": ["TOMB", "tomb"],
-            "extensions": [".tomb",".tmb"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "tomb",
-            "scopeName": "source.tomb",
-            "path": "./syntaxes/tomb.tmLanguage.json"
-        }]
-    },
-    "scripts": {
-        "prepare": "js-yaml syntaxes/tomb.tmLanguage.yaml > syntaxes/tomb.tmLanguage.json",
-        "package": "npm run prepare && vsce package",
-        "clean": "rm -f syntaxes/tomb.tmLanguage.json"
-    },
-    "devDependencies": {
-        "js-yaml": "^3.13.1"
-    }
+    "grammars": [
+      {
+        "language": "tomb",
+        "scopeName": "source.tomb",
+        "path": "./syntaxes/tomb.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "prepare": "js-yaml syntaxes/tomb.tmLanguage.yaml > syntaxes/tomb.tmLanguage.json",
+    "package": "npm run prepare && vsce package",
+    "publish": "npm run package && vsce publish",
+    "clean": "rm -f syntaxes/tomb.tmLanguage.json"
+  },
+  "devDependencies": {
+    "js-yaml": "^3.13.1"
+  }
 }
