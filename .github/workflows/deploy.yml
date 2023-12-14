@@ -1,0 +1,19 @@
+name: Deploy Extension
+
+on:
+  push:
+    branches:
+      - main # Set your default branch here
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - run: npm install
+      - run: npm install -g vsce
+      - run: vsce package
+      - run: vsce publish -p ${{ secrets.VS_MARKETPLACE_PAT }}
